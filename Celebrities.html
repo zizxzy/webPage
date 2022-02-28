@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer"
+          content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <title>李泽宇（zy） -
+        前端开发爱好者。</title>
+    <meta
+            name="description"
+            content="这是一个介绍我的家乡-揭阳的论坛，欢迎光临">
+    <link href="css/bootstrap.min.css"
+          rel="stylesheet"
+          type="text/css"/>
+    <link href="css/font-awesome.min.css"
+          rel="stylesheet"
+          type="text/css">
+    <link href="css/rewrite-bootstrap.css"
+          rel="stylesheet">
+    <link href="style.css"
+          rel="stylesheet"
+          type="text/css"/>
+    <link
+            href="css/swiper.min.css"
+            rel="stylesheet"
+            type="text/css"/>
+    <!--[if lt IE 9]>
+    <script type="text/javascript"
+            src="js/html5.js"></script>
+    <script type="text/javascript"
+            src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<header class="vc-header">
+    <nav
+            class="navbar navbar-default navbar-fixed-top nav-top"
+            role="navigation"
+    >
+        <div class="container">
+            <div
+                    class="navbar-header nav-title">
+                <button type="button"
+                        class="navbar-toggle "
+                        data-toggle="collapse"
+                        data-target="#menu">
+                    <span
+                            class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"
+                   href="./index.html">
+                    我的家乡-揭阳之历史名人篇
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse"
+                 id="menu">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">首页
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                                href="./page.html">文章</a>
+                    </li>
+                    <li>
+                        <a
+                                href="./map.html">地图</a>
+                    </li>
+                    <li>
+                        <a
+                                href="./comments.html">论坛</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/zizxzy">GitHub</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#"
+                           class="dropdown-toggle"
+                           data-toggle="dropdown"
+                           role="button"
+                           aria-expanded="false">更多
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu"
+                            role="menu">
+                            <li>
+                                <a href="https://juejin.im/user/5e965ea0e51d4546b90d24f6">掘金首页</a>
+                            </li>
+                            <li>
+                                <a href="https://segmentfault.com/u/zizxzy">思否首页</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container vc-container">
+    <div class="row">
+        <div
+                class="col-sm-12 col-md-9"
+                id="articleTpl">
+            <nav>
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="#"><i
+                                class="fa fa-angle-left"></i>
+                            Older</a>
+                    </li>
+                    <li class="next">
+                        <a href="#">Newer
+                            <i class="fa fa-angle-right"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div
+                class="visible-lg visible-md col-md-3">
+            <div class="panel panel-default">
+                <h4 class="vc-widget-title">
+                    公告</h4>
+                <div class="panel-body">
+                    <p style="text-indent:2rem;word-break:break-all;">
+                        这是一个介绍我的家乡-揭阳的论坛，欢迎光临
+                    </p>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <h4 class="vc-widget-title">
+                    友情链接</h4>
+                <div class="panel-body">
+                    <div class="row text-center">
+                        <a href="custom.html"
+                           class="col-md-6">风土人情</a>
+                        <a
+                                href="scence.html"
+                                class="col-md-6">家乡风貌</a>
+                        <a
+                                href="food.html"
+                                class="col-md-6">
+                            土特产品</a>
+                        <a
+                                href="Celebrities.html"
+                                class="col-md-6">历史名人</a>
+                        <a
+                                href="placesOfInterest.html"
+                                class="col-md-6">名胜古迹</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--引入外部的js文件-->
+<script type="text/javascript"
+        src="js/jquery.min.js"></script>
+<script type="text/javascript"
+        src="js/bootstrap.min.js"></script>
+<script type="text/javascript"
+        src="js/base.js"></script>
+<script src="http://cdn.bootcss.com/holder/2.6.0/holder.min.js"></script>
+<script
+        src="./js/template-web.js"></script>
+<script type="text/html"
+        id="tpl">
+    {{each articles}}
+    <div class="thumbnail">
+        <div class="vc-pagelist-img">
+            <a href=""><img
+                    src="{{$value.img}}"
+                    alt="demo image">
+            </a>
+        </div>
+        <div class="caption">
+            <h1 class="vc-page-title">
+                <a href="">
+                    {{$value.title}}</a>
+            </h1>
+            <p class="vc-author-info">
+                <time>
+                    {{$value.time}}
+                </time>
+                &bull;
+                <span>
+                    {{$value.author}}</span>
+            </p>
+            <!--在小屏幕里面隐藏-->
+            <p
+                    class="hidden-xs">
+                {{$value.content}}</p>
+            <p class="clearfix">
+                <span class="vc-tags">
+                    {{each
+                    $value.tags}}
+                                <a href="javascript:return false;">{{$value}}</a>
+                    {{/each}}
+                            </span>
+            </p>
+        </div>
+    </div>
+    {{/each}}
+</script>
+<script
+        type="text/javascript">
+    let res = [
+        {
+            "title": "曾习经",
+            "author": "李旺",
+            "time": "2020-05-24",
+            "tags": [
+                "历史名人",
+                "文化"
+            ],
+            "img": "./img/data/曾习经.jfif",
+            "content": "曾习经，字刚甫，号蛰庵，清揭阳县霖田都湖镇（今属揭西县）人。其先祖原籍福建莆田，后迁居揭阳棉湖。其父曾中孚，武生，官至蓝翎把总。曾习经生于清同治六年（1867）。兄弟四人，排行第三。其家庭教育严格，兄弟\"习礼于庭，揖让升降皆中矩度\"。曾习经少时颇有天资，刻苦学习，从其兄曾述经就读。光绪十四年（1888），两广总督张之洞在广州创办广雅书院，在两广各府州县选拔人才到广雅书院深造，曾述经、曾习经同被选中。曾习经在广雅书院\"百学无不窥\"，尤其在诗作上徘恻醉人，为院长梁鼎芬所赏识。其后曾习经转读学风更为活泼的学海堂，与梁启超、麦盂华同窗交谊甚深，常与梁启超到潮州会馆通宵煮茗谈艺。"
+        },
+        {
+            "title":"傅海峰",
+            "author":"小王",
+            "time":"2020-03-06",
+            "tags":[
+                "历史名人",
+                "运动员"
+            ],
+            "img": "./img/data/傅海峰.png",
+            "content": "傅海峰，1983年8月23日出生于广东揭阳。中国羽毛球队男子双打运动员。\n2002年，傅海峰进入国家一队，搭档蔡赟，被称为”风云组合“ ，2014年改与张楠搭档 ，被称为\"南风组合\"。\n2006年、2009年-2011年，蔡赟/傅海峰四次获得世锦赛男双冠军，成为羽毛球男双史无前例的世锦赛四冠王 。\n2012年8月5日，伦敦奥运会羽毛球男双决赛中，蔡赟/傅海峰2-0战胜丹麦选手鲍伊/摩根森获得男双冠军，这也是中国队首次获得奥运会男双金牌 。\n北京时间2016年8月20日，里约奥运会羽毛球男双决赛中，傅海峰/张楠2-1击败马来西亚组合吴蔚昇/陈伟强，获得男双冠军。傅海峰成为历史上第一位卫冕男双奥运冠军的选手。\n傅海峰是6届苏迪曼杯冠军主力成员，5届汤姆斯杯冠军主力成员，三次获得体坛风云人物最佳组合奖 。2016年12月15日，傅海峰/张楠获得2016CCTV体坛风云人物年度最佳组合奖提名奖。2017年9月，傅海峰和蔡赟获得“最多羽毛球世锦赛男子双打冠军”吉尼斯世界纪录称号"
+        }
+    ];
+
+    function ajaxByPage() {
+                    var html = template("tpl", {articles: res});
+                    var articleTpl = document.getElementById('articleTpl');
+                    articleTpl.innerHTML = html;
+    }
+
+    $(function () {
+        ajaxByPage();
+        window.scrollTo(0,0);
+    });
+</script>
+</body>
+</html>

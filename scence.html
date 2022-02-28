@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer"
+          content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <title>李泽宇（zy） -
+        前端开发爱好者。</title>
+    <meta
+            name="description"
+            content="这是一个介绍我的家乡-揭阳的论坛，欢迎光临">
+    <link href="css/bootstrap.min.css"
+          rel="stylesheet"
+          type="text/css"/>
+    <link href="css/font-awesome.min.css"
+          rel="stylesheet"
+          type="text/css">
+    <link href="css/rewrite-bootstrap.css"
+          rel="stylesheet">
+    <link href="style.css"
+          rel="stylesheet"
+          type="text/css"/>
+    <link
+            href="css/swiper.min.css"
+            rel="stylesheet"
+            type="text/css"/>
+    <!--[if lt IE 9]>
+    <script type="text/javascript"
+            src="js/html5.js"></script>
+    <script type="text/javascript"
+            src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<header class="vc-header">
+    <nav
+            class="navbar navbar-default navbar-fixed-top nav-top"
+            role="navigation"
+    >
+        <div class="container">
+            <div
+                    class="navbar-header nav-title">
+                <button type="button"
+                        class="navbar-toggle "
+                        data-toggle="collapse"
+                        data-target="#menu">
+                    <span
+                            class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"
+                   href="./index.html">
+                    我的家乡-揭阳之风景篇
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse"
+                 id="menu">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">首页
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                                href="./page.html">文章</a>
+                    </li>
+                    <li>
+                        <a
+                                href="./map.html">地图</a>
+                    </li>
+                    <li>
+                        <a
+                                href="./comments.html">论坛</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/zizxzy">GitHub</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#"
+                           class="dropdown-toggle"
+                           data-toggle="dropdown"
+                           role="button"
+                           aria-expanded="false">更多
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu"
+                            role="menu">
+                            <li>
+                                <a href="https://juejin.im/user/5e965ea0e51d4546b90d24f6">掘金首页</a>
+                            </li>
+                            <li>
+                                <a href="https://segmentfault.com/u/zizxzy">思否首页</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container vc-container">
+    <div class="row">
+        <div
+                class="col-sm-12 col-md-9"
+                id="articleTpl">
+            <nav>
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="#"><i
+                                class="fa fa-angle-left"></i>
+                            Older</a>
+                    </li>
+                    <li class="next">
+                        <a href="#">Newer
+                            <i class="fa fa-angle-right"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div
+                class="visible-lg visible-md col-md-3">
+            <div class="panel panel-default">
+                <h4 class="vc-widget-title">
+                    公告</h4>
+                <div class="panel-body">
+                    <p style="text-indent:2rem;word-break:break-all;">
+                        这是一个介绍我的家乡-揭阳的论坛，欢迎光临
+                    </p>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <h4 class="vc-widget-title">
+                    友情链接</h4>
+                <div class="panel-body">
+                    <div class="row text-center">
+                        <a href="custom.html"
+                           class="col-md-6">风土人情</a>
+                        <a
+                                href="scence.html"
+                                class="col-md-6">家乡风貌</a>
+                        <a
+                                href="food.html"
+                                class="col-md-6">
+                            土特产品</a>
+                        <a
+                                href="Celebrities.html"
+                                class="col-md-6">历史名人</a>
+                        <a
+                                href="placesOfInterest.html"
+                                class="col-md-6">名胜古迹</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--引入外部的js文件-->
+<script type="text/javascript"
+        src="js/jquery.min.js"></script>
+<script type="text/javascript"
+        src="js/bootstrap.min.js"></script>
+<script type="text/javascript"
+        src="js/base.js"></script>
+<script src="http://cdn.bootcss.com/holder/2.6.0/holder.min.js"></script>
+<script
+        src="./js/template-web.js"></script>
+<script type="text/html"
+        id="tpl">
+    {{each articles}}
+    <div class="thumbnail">
+        <div class="vc-pagelist-img">
+            <a href=""><img
+                    src="{{$value.img}}"
+                    alt="demo image">
+            </a>
+        </div>
+        <div class="caption">
+            <h1 class="vc-page-title">
+                <a href="">
+                    {{$value.title}}</a>
+            </h1>
+            <p class="vc-author-info">
+                <time>
+                    {{$value.time}}
+                </time>
+                &bull;
+                <span>
+                    {{$value.author}}</span>
+            </p>
+            <!--在小屏幕里面隐藏-->
+            <p
+                    class="hidden-xs">
+                {{$value.content}}</p>
+            <p class="clearfix">
+                <span class="vc-tags">
+                    {{each
+                    $value.tags}}
+                                <a href="javascript:return false;">{{$value}}</a>
+                    {{/each}}
+                            </span>
+            </p>
+        </div>
+    </div>
+    {{/each}}
+</script>
+<script
+        type="text/javascript">
+    let res = [
+        {
+            "title":"揭阳音乐喷泉",
+            "author":"lzy",
+            "time": "2020-03-25",
+            "tags": [
+                "风貌",
+                "景点"
+            ],
+            "img": "./img/data/揭阳音乐喷泉.jpg",
+            "content": "揭阳音乐喷泉是一座集音乐、喷泉、激光、灯光、音响于一体的综合性大型水景表演体系。揭阳音乐喷泉投资3000多万元建成，是目前世界面积最大的浮体平台;它还是目前国内最高、最长的江上音乐喷泉。揭阳榕江大型音乐喷泉位于广东省揭阳市政府办公大楼前榕江北河江心，是一座集音乐喷泉、激光、灯光、音响于一体的综合性大型水景表演体系。建设榕江大型音乐喷泉，是揭阳市\n揭阳音乐喷泉\n揭阳音乐喷泉\n 委、市政府强势推进揭阳跨越发展，打造揭阳\"山水城市\"，弘扬揭阳地方历史文化，提升城市文化品位，为广大市民营造旅游、休闲生活好去处的\"民心工程\""
+        },
+        {
+            "title":"揭阳楼",
+            "author":"lizeyu",
+            "time": "2020-01-25",
+            "tags": [
+                "风貌",
+                "景点"
+            ],
+            "img": "./img/data/揭阳楼.jpg",
+            "content": "揭阳楼，是揭阳市的象征，位于广东省揭阳市区东入口，邻榕江，取法汉代形式，高达38米，有望成为具有历史象征意义的城市地标；加上被确定作为新市规划和历史文化展示功能用途，它的建成，将激励揭阳六百万英雄儿女，发扬优秀文化传统，创造更加辉煌的未来。揭阳楼综合工程的总体布局是广场以“水上莲花”为主题，主楼四周以小河环绕，寓意古护城河和“岭南水乡”之意。揭阳楼广场主轴为东西向，靠东处为盛鼎广场，西为揭阳城楼，总高38米，总层数为五层，其中城台两层，楼阁三层(含暗层一层)。广场主轴为东西向，靠东处为盛鼎广场，西为五层高城楼，主楼前放置9.99米高、重达58吨号称世界最大最重的青铜方鼎。而寓意“博大精神”重达136吨的泰山石，更是为这里平添了一份让人惊叹的壮美。整个揭阳楼广场面积逾30万平方米，视野开阔，远眺近观皆是景。"
+        }
+    ];
+
+    function ajaxByPage() {
+                    var html = template("tpl", {articles: res});
+                    var articleTpl = document.getElementById('articleTpl');
+                    articleTpl.innerHTML = html;
+    }
+
+    $(function () {
+        ajaxByPage();
+        window.scrollTo(0,0);
+    });
+</script>
+</body>
+</html>

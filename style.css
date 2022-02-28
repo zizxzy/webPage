@@ -1,0 +1,611 @@
+/*
+Author: lzy
+Description: 我的家乡论坛
+Version: 1.0
+*/
+
+body {
+    position: relative;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, Verdana, 'Hiragino Sans GB', 'Microsoft YaHei', STHeiti, 'WenQuanYi Micro Hei', SimSun, sans-serif;
+}
+
+embed {
+    display: none;
+}
+
+::selection {
+    background-color: #1abc9c;
+    color: #FFF;
+}
+
+a {
+    color: #797979;
+}
+
+a:hover {
+    color: #1abc9c;
+    text-decoration: none;
+}
+
+.vc-pt15 {
+    padding-top: 15px;
+}
+
+.vc-header {
+    background-color: #fff;
+    padding: 15px 0;
+    border-bottom: 1px solid #efefef;
+}
+
+@media only screen and (-Webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5) {
+    .vc-header .vc-logo {
+        margin: 0;
+        padding: 0;
+        width: 150px;
+        height: 40px;
+        text-indent: -999px;
+        background: url(img/logo@2x.png) no-repeat;
+        -webkit-background-size: 150px 40px;
+        background-size: 150px 40px;
+    }
+}
+
+/*设置导航栏的一部分样式*/
+.nav-top {
+    padding: 8px 0;
+}
+
+.nav-title {
+    padding: 6px 0;
+}
+
+/*设置container容器距离顶部30px*/
+/*container本来就有左右居中*/
+.vc-container {
+    padding-top: 30px;
+}
+
+/*设置缩略图里面的h1标题距离顶部10px以及字体*/
+.vc-page-title {
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.vc-page-title a {
+    color: #555;
+}
+
+/*主题色，伪类鼠标在其上面的颜色*/
+.vc-page-title a:hover {
+    color: #1abc9c;
+}
+
+/*设置作者时间评论的字体大小、颜色以及行高*/
+.vc-author-info {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+/*设置a标签的颜色*/
+.vc-author-info a {
+    color: #aaa;
+}
+
+.vc-author-info a:hover {
+    color: #1abc9c;
+}
+
+/*设置文章信息下面的time span的外边距*/
+.vc-author-info > time,
+.vc-author-info > span {
+    margin: 0 .3em 0;
+}
+
+.vc-author-info > :first-child {
+    margin-left: 0;
+}
+
+/*覆盖掉原有的边距*/
+.vc-pagelist-img {
+    margin: -5px -15px 0;
+}
+
+/*图片填充满整个div*/
+.vc-pagelist-img img {
+    width: 100%;
+}
+
+/*设置panel管道的标题的样式*/
+.vc-widget-title {
+    font-size: 18px;
+    margin: 0 auto;
+    padding: 15px 15px 0;
+}
+
+/* 文章内容 */
+/*设置主体的宽高以及左内边距，外边距设置为左右自动*/
+.vc-blog {
+    width: 100%;
+    height: auto;
+    padding: 0 20px;
+}
+
+/*设置文章的标题样式*/
+.vc-blog-title {
+    font-size: 30px;
+    line-height: 42px;
+    font-weight: normal;
+    text-transform: none;
+}
+
+/*宽度占满整个div，高度自适应*/
+.vc-blog-content {
+    width: 100%;
+    height: auto;
+    margin: 15px auto 10px;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+/*设置图片的最大宽度，避免撑破div、文字居中、上下边距*/
+.vc-blog-content img {
+    width: 100%;
+    height: 700px;
+    text-align: center;
+    overflow: hidden;
+    margin: 10px auto 10px;
+    display: block;
+}
+
+/*设置文章的所有权，背景颜色是灰色，外边界线是1px 加粗 绿色 左边的边界线变成了4px*/
+.panel.panel-default .vc-copyright {
+    background: #f9f9f9;
+    padding: .5em .7em;
+    margin: 1em 0;
+    border: 1px solid #1abc9c;
+    border-left-width: 4px;
+}
+
+.swiper-container {
+    width: 850px;
+    height: 350px;
+}
+
+.swiper-container img {
+    width: 100%;
+    height: auto;
+}
+
+/*设置标签的字体大小*/
+.vc-tags {
+    font-size: 12px;
+}
+
+/*加上# 开始符号*/
+.vc-tags a:before {
+    content: "#";
+}
+
+/*设置标签的边距、背景颜色、文字颜色、动画特效（背景在0.5s内产生过渡）*/
+.vc-tags a {
+    margin-right: .5em;
+    padding: 2px 4px;
+    border-radius: 2px;
+    background: #ccc;
+    color: #fff;
+    -webkit-transition: background .5s;
+    -moz-transition: background .5s;
+    transition: background .5s;
+}
+/*鼠标在标签上面的背景颜色*/
+.vc-tags a:hover {
+    background-color: #1abc9c;
+}
+
+.nav-title .nav-a:hover {
+    -webkit-transition: background .5s;
+    -moz-transition: background .5s;
+    transition: background .5s;
+    color: #1abc9c;
+}
+/*？？？？*/
+.nav-right > ul > li >a:hover{
+    -webkit-transition: background .5s;
+    -moz-transition: background .5s;
+    transition: background .5s;
+    color: #1abc9c;
+}
+
+
+/*更多链接的文字颜色以及文字加粗*/
+.vc-more-link {
+    color: #1abc9c;
+    font-weight: bold;
+}
+
+/* 发帖div的边距和背景颜色*/
+.comment-respond {
+    padding: 10px 20px;
+    border: 1px solid #efefef;
+    background-color: #fff;
+}
+
+/*设置帖子标题的样式，字体，高度，颜色，左边的绿色边距*/
+.comment-reply-title {
+    font-weight: normal;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    height: 20px;
+    color: #555;
+    border-left: 4px solid #1abc9c;
+    padding-left: 6px;
+}
+
+.comment-form {
+    clear: both;
+}
+
+.comment-notes {
+    padding: 2px 5px;
+    color: #fff;
+    background-color: #ccc;
+}
+
+/*平分div 1/3*/
+.comment-form-author,
+.comment-form-email,
+.comment-form-date {
+    width: 33.33%;
+    float: left;
+}
+
+.delete-link {
+    padding: 0 15px;
+    margin: 18px 0 11px 0;
+    font-size: 14px;
+}
+
+#commentform p.comment-form-comment, #commentform p.form-submit {
+    clear: both
+}
+
+#commentform label {
+    padding: 6px 0;
+    display: block
+}
+
+#commentform input[type="text"], #commentform textarea {
+    padding: 5px 1.8%;
+    width: 95%;
+    border: 1px solid #eee;
+    font-size: 14px;
+    background: #fcfcfc;
+    outline: none;
+}
+
+#commentform input[name="url"] {
+    width: 100%;
+}
+
+#commentform textarea {
+    margin-top: 10px;
+    width: 100%;
+}
+
+#commentform input#submit, #commentform input#reset {
+    width: 100px;
+    height: 32px;
+    border: 0;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#commentform #submit:hover, #commentform #reset:hover {
+    background: #17a98c
+}
+
+
+
+#commentForm p.comment-form-comment, #commentForm p.form-submit {
+    clear: both
+}
+
+#commentForm label {
+    padding: 6px 0;
+    display: block
+}
+
+#commentForm input[type="text"], #commentForm textarea {
+    padding: 5px 1.8%;
+    width: 95%;
+    border: 1px solid #eee;
+    font-size: 14px;
+    background: #fcfcfc;
+    outline: none;
+}
+
+#commentForm input[name="url"] {
+    width: 100%;
+}
+
+#commentForm textarea {
+    margin-top: 10px;
+    width: 100%;
+}
+
+#commentForm input#respondBtn, #commentForm input#reset {
+    width: 100px;
+    height: 32px;
+    border: 0;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background: #1abc9c;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#commentForm #respondBtn:hover, #commentForm #reset:hover {
+    background: #17a98c
+}
+/*设置帖子的字体和颜色*/
+.vc-comments-title {
+    font-size: 18px;
+    color: #17a98c;
+}
+
+.vc-comments-form .vc-textarea {
+    background-color: #fff;
+    padding: 5px 10px;
+}
+
+.vc-comments-form .vc-comments-text {
+    border-radius: 3px;
+    border: 1px solid #efefef;
+    padding: 0;
+    overflow: hidden;
+}
+
+.vc-comments-footer {
+    background-color: #efefef;
+}
+
+.vc-comments-smilies {
+    margin: 5px 0 0 7px;
+}
+
+.vc-comments-footer img.emoji {
+    display: inline !important;
+    border: none !important;
+    box-shadow: none !important;
+    height: 1em !important;
+    width: 1em !important;
+    margin: 0 .07em !important;
+    vertical-align: -0.1em !important;
+    background: none !important;
+    padding: 0 !important;
+    margin-right: 5px !important;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.vc-comments-footer input {
+    border-radius: 0;
+    background-color: #1abc9c;
+}
+
+.vc-comments-footer input:hover,
+.vc-comments-footer input:focus {
+    background-color: #1abc9c;
+}
+
+.vc-comments-footer input:active {
+    background-color: #15A186;
+}
+
+#comments {
+    clear: both;
+    margin: 40px 0
+}
+
+#comments-title {
+    margin: 0 0 1em;
+    color: #999;
+    font-weight: 400;
+    font-size: 22px
+}
+
+/*设置帖子列表的样式*/
+.commentlist {
+    margin: 0 0 1em 0;
+    padding: 0;
+    color: #666;
+    list-style: none
+}
+
+/*设置每一条帖子的边距和边界线*/
+.commentlist .comment {
+    margin: 1em 0 0 0;
+    padding-top: 1em;
+    border-top: 1px dotted #ccc
+}
+
+.commentlist .bypostauthor > div > div > .fn:after {
+    margin-left: 5px;
+    padding: 1px 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: #16a085;
+    color: #fff;
+    content: "博主";
+    font-size: 12px
+}
+
+.commentlist .bypostauthor {
+    _border-top: 1px solid #16a085
+}
+
+/*设置评论主体为相对定位，距离左边60px*/
+.commentlist .comment-body {
+    position: relative;
+    margin-left: 60px
+}
+
+/*设置头像的样式*/
+.commentlist .comment-author .avatar {
+    position: absolute;
+    top: 0;
+    left: -60px;
+    border-radius: 3px
+}
+
+/*设置发帖人的用户名的颜色和字体*/
+.commentlist .comment-author .fn {
+    color: #16a085;
+    font-style: normal
+}
+
+/*设置a标签的样式*/
+.commentlist .comment-author .url {
+    color: #16a085;
+    font-weight: 700
+}
+
+.commentlist .comment-author .url:hover {
+    color: #1abc9c
+}
+
+/*设置发表时间在右边浮动*/
+.commentlist .comment-awaiting-moderation,
+.commentlist .comment-author time {
+    float: right;
+    color: #999;
+    font-size: 12px;
+    /*+ margin-top: - .8 em;*/
+    white-space: nowrap;
+}
+
+.commentlist .comment-content {
+    margin-top: .5em;
+    word-wrap: break-word;
+    word-break: normal
+}
+
+.commentlist .comment-content p {
+    margin: 0 0 .5em
+}
+
+.commentlist .comment-content > p:last-child {
+    margin-bottom: .2em
+}
+
+.commentlist .comment-content pre,
+.commentlist .comment-content code {
+    margin: 0 .2em;
+    padding: .2em;
+    background: #e7e7e7
+}
+
+/*设置回复标签的可见性，当鼠标在其上面的时候触发动画，由透明->不透明*/
+.commentlist .comment-footer {
+    text-align: right;
+    font-size: 12px;
+    opacity: 1;
+   /* -webkit-transition: opacity .3s;
+    -moz-transition: opacity .3s;
+    transition: opacity .3s*/
+}
+
+/*设置回复标签的可见性，当鼠标在其上面的时候触发动画，由透明->不透明*/
+.commentlist .comment-body:hover .comment-footer {
+    opacity: 1
+}
+
+/*设置回复a标签的颜色和左边距*/
+.commentlist .comment-footer a {
+    margin-left: 1em;
+    color: #16a085
+}
+
+.commentlist .comment-footer a:hover {
+    color: #1abc9c
+}
+
+/*设置回复标签的样式*/
+.commentlist .children {
+    margin: 1em 0 0 60px;
+    padding: 0;
+    list-style-type: none
+}
+
+.commentlist .children .children {
+    margin-left: 40px
+}
+
+.commentlist .children .comment-body {
+    margin-left: 40px
+}
+
+.commentlist .children .comment-author .avatar {
+    left: -40px;
+    width: 30px;
+    height: 30px
+}
+
+/* 尾部 CSS */
+
+.vc-footer {
+    background: #242424;
+    padding-bottom: 30px;
+}
+
+.vc-footer .vc-footer-info {
+    background: #2d2e2f;
+}
+
+.vc-footer .vc-footer-info .vc-footer-menu {
+    padding: 12px 20px;
+    text-align: center;
+    list-style: none;
+    overflow: hidden;
+}
+
+.vc-footer .vc-footer-info .vc-footer-menu > li {
+    vertical-align: top;
+}
+
+.vc-footer .vc-footer-info .vc-footer-menu > li:nth-child(n+2) {
+    margin-left: 15px;
+}
+
+.vc-footer .vc-footer-info .vc-footer-menu > li,
+.vc-footer .vc-footer-info .vc-footer-menu > li > a {
+    display: inline-block;
+    font-size: 14px;
+}
+
+.vc-footer .vc-footer-copyright {
+    padding-top: 30px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.vc-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+

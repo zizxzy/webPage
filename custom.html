@@ -1,0 +1,277 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer"
+          content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <title>李泽宇（zy） -
+        前端开发爱好者。</title>
+    <meta
+            name="description"
+            content="这是一个介绍我的家乡-揭阳的论坛，欢迎光临">
+    <link href="css/bootstrap.min.css"
+          rel="stylesheet"
+          type="text/css"/>
+    <link href="css/font-awesome.min.css"
+          rel="stylesheet"
+          type="text/css">
+    <link href="css/rewrite-bootstrap.css"
+          rel="stylesheet">
+    <link href="style.css"
+          rel="stylesheet"
+          type="text/css"/>
+    <link
+            href="css/swiper.min.css"
+            rel="stylesheet"
+            type="text/css"/>
+    <!--[if lt IE 9]>
+    <script type="text/javascript"
+            src="js/html5.js"></script>
+    <script type="text/javascript"
+            src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<header class="vc-header">
+    <nav
+            class="navbar navbar-default navbar-fixed-top nav-top"
+            role="navigation"
+    >
+        <div class="container">
+            <div
+                    class="navbar-header nav-title">
+                <button type="button"
+                        class="navbar-toggle "
+                        data-toggle="collapse"
+                        data-target="#menu">
+                    <span
+                            class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"
+                   href="./index.html">
+                    我的家乡-揭阳之习俗篇
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse"
+                 id="menu">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">首页
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                                href="./page.html">文章</a>
+                    </li>
+                    <li>
+                        <a
+                                href="./map.html">地图</a>
+                    </li>
+                    <li>
+                        <a
+                                href="./comments.html">论坛</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/zizxzy">GitHub</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#"
+                           class="dropdown-toggle"
+                           data-toggle="dropdown"
+                           role="button"
+                           aria-expanded="false">更多
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu"
+                            role="menu">
+                            <li>
+                                <a href="https://juejin.im/user/5e965ea0e51d4546b90d24f6">掘金首页</a>
+                            </li>
+                            <li>
+                                <a href="https://segmentfault.com/u/zizxzy">思否首页</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container vc-container">
+    <div class="row">
+        <div
+                class="col-sm-12 col-md-9"
+                id="articleTpl">
+            <nav>
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="#"><i
+                                class="fa fa-angle-left"></i>
+                            Older</a>
+                    </li>
+                    <li class="next">
+                        <a href="#">Newer
+                            <i class="fa fa-angle-right"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div
+                class="visible-lg visible-md col-md-3">
+            <div class="panel panel-default">
+                <h4 class="vc-widget-title">
+                    公告</h4>
+                <div class="panel-body">
+                    <p style="text-indent:2rem;word-break:break-all;">
+                        这是一个介绍我的家乡-揭阳的论坛，欢迎光临
+                    </p>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <h4 class="vc-widget-title">
+                    友情链接</h4>
+                <div class="panel-body">
+                    <div class="row text-center">
+                        <a href="custom.html"
+                           class="col-md-6">风土人情</a>
+                        <a
+                                href="scence.html"
+                                class="col-md-6">家乡风貌</a>
+                        <a
+                                href="food.html"
+                                class="col-md-6">
+                            土特产品</a>
+                        <a
+                                href="Celebrities.html"
+                                class="col-md-6">历史名人</a>
+                        <a
+                                href="placesOfInterest.html"
+                                class="col-md-6">名胜古迹</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--引入外部的js文件-->
+<script type="text/javascript"
+        src="js/jquery.min.js"></script>
+<script type="text/javascript"
+        src="js/bootstrap.min.js"></script>
+<script type="text/javascript"
+        src="js/base.js"></script>
+<script src="http://cdn.bootcss.com/holder/2.6.0/holder.min.js"></script>
+<script
+        src="./js/template-web.js"></script>
+<script type="text/html"
+        id="tpl">
+    {{each articles}}
+    <div class="thumbnail">
+        <div class="vc-pagelist-img">
+            <a href=""><img
+                    src="{{$value.img}}"
+                    alt="demo image">
+            </a>
+        </div>
+        <div class="caption">
+            <h1 class="vc-page-title">
+                <a href="">
+                    {{$value.title}}</a>
+            </h1>
+            <p class="vc-author-info">
+                <time>
+                    {{$value.time}}
+                </time>
+                &bull;
+                <span>
+                    {{$value.author}}</span>
+            </p>
+            <!--在小屏幕里面隐藏-->
+            <p
+                    class="hidden-xs">
+                {{$value.content}}</p>
+            <p class="clearfix">
+                <span class="vc-tags">
+                    {{each
+                    $value.tags}}
+                                <a href="javascript:return false;">{{$value}}</a>
+                    {{/each}}
+                            </span>
+            </p>
+        </div>
+    </div>
+    {{/each}}
+</script>
+<script
+        type="text/javascript">
+    let res =  [
+        {
+            "title": "拜老爷",
+            "author": "李华",
+            "time": "2020-05-06",
+            "tags": [
+                "传统习俗",
+                "宗教"
+            ],
+            "img":"./img/data/拜老爷.jfif",
+            "content": "“拜老爷”是潮汕地区一种传统的民俗，是一种对神的祭祀活动。其历史悠久，祭祀对象庞杂，影响非常广泛。由于历经千百年的劳动人民崇拜和神化，以及历代统治者的喧染、利用，祭拜老爷及其场所(老爷宫)披上了一层神秘的面纱。说起这潮汕人“拜老爷”，学问实在太大了，不同的时节有不同的“老爷”要拜，范围之广，涉及的神仙之多，超乎一般人的想象，每月除了初一十五要拜家里的地主爷之外，一年里还有天公（玉皇大帝）、佛祖（如来佛祖）、观音娘娘、土地公公、财神、月娘（月神）、门神……特别是正月里，拜老爷更是头等大事，事关家宅一年兴衰，从年三十到正月十五，几乎每隔两三天就要拜一次，场景堪称盛大。\n相比于拜佛等宗教活动，“拜老爷”更具地方性和灵活性。“拜老爷”的活动时间是以农历为标准。农历每月的初一，十五两天为固定的祭祀时间。这两天一般在家里举行，形式较简单。主要是祭祀地主爷和天公，摆上香炉，烛台，和供品，烧香祈祷后再烧钱纸。除外还有其他各种各样的神的诞生日，形式隆重且庄严。例如天公诞日，土地公诞日，尤其是正月，“拜老爷”不仅活动多而且规模大。家里要祭祀，还要到“老爷宫”去祭祀。供品也要讲究，有三牲：猪，鸡，鱼；有特定做的潮汕粿食，如发粿，乒乓粿，桃粿等，有各种新鲜水果，还有必备的卤鹅。每个村有各自规模盛大的“迎老爷”活动，寺庙要供奉超大型的香，请歌仔戏表演，有仪仗队游行，放鞭炮烟花等。\n“拜老爷”除了烧香烧钱纸外，也有“问杯”形式。拿两片由竹头或木头制成的杯，祈祷后摔到地上。如果两片都成反面，便是“笑杯”；如果两面都成正面，则是“稳杯”，都不吉；如果一正一反，则为“圣杯”，是吉兆，预示着祈告内容可以实现。这种形式也用于跟神的对话，圣杯则表示神灵同意你的请求，反之，则不同意你的请求。\n祭拜神明，是中国人乃至全人类都存在的现象，潮汕人也一样，如《东里志》（陈天资，明万历二年）所云：“粤俗尚贵，祠庙兴矣”。在潮汕地区存在着成千上万的大小神庙，神庙里供奉的神明，有自然神明（天地父母、太阳神、月神、风雨雷电诸神、山川河流动植物诸神……）佛门诸神、道教诸神、帝王圣贤英烈清官等等，每逢初一、十五，可见提篮担筐的妇女们，奔走于各个庙宇之间，虔诚膜拜。神明在潮汕统称为“老爷”，为何潮人会如此的痴迷神明崇拜，而且是多个神明一起供奉呢。应该来说有一定的地理与历史原因，潮汕地处沿海地区，也属南蛮之地，自古以来天灾较多，且文化发展较迟，原始宗教思想基础导致了信神，在人们的头脑中形成一种思维概念，当人们在遇见自身无力支配的命运时，便容易萌发信神心态，人们所以信神、祀神，无论是偶像或自然形象，都是由于认为这样做是对自己有用处和好处的，企望“有求必应”才去拜祭，究其原因主要有：畏惧心理、保险心理、娱乐消遣心理、偶像崇拜的心理等等。拜神这种东西其实是很难定位的，说它是封建迷信可以，说它是一种信仰也可以。信仰是一种好东西，人不能没有信仰，人总要有一些精神寄托与精神力量支持，但信仰得太过的时候便成了迷信。现今的潮汕人同世界上其它民族一样，虽认为世界没有神，但拜一拜神也无妨，起码得到心灵上的安抚，所谓“宁信其有，不信其无”，潮汕的这种信仰崇拜基本上承续了对社会的各种传统信仰。而由于种种的拜祭活动使得潮汕的神多了起来，神庙也随着多了起来，并渐渐成为民俗文化中一个典型的、有特色的组成部分"
+        },
+        {
+            "title": "跳火堆",
+            "author": "李华",
+            "time": "2020-04-06",
+            "tags": [
+                "传统习俗",
+                "民俗",
+                "宗教"
+            ],
+            "img":"./img/data/跳火堆.jpg",
+            "content": "所谓“跳火堆‘就是在祠堂前的广场上铺上一堆干稻草点燃，待大火燃起之后，在锣鼓声鞭炮声的造势下，游神队伍或抬着神轿，或三五成群，或单身独人的跳过火堆，旁边有人不断向火堆中加入干草以保持火势旺盛。\n\n该活动喻意去掉一身晦气，大家边跳边念着表达内心美好愿望的民谣，如：“跳入来，新年发大财；跳出去，无忧也无虑；跳过东，粮食吃不空；跳过西，钱银满厝内”等。"
+        },
+        {
+            "title": "出花园",
+            "author": "李明",
+            "time": "2020-05-14",
+            "tags": [
+                "成人礼",
+                "民俗"
+            ],
+            "img": "./img/data/出花园.jfif",
+            "content": "揭阳潮语区，凡满15岁的男女一般于当年农历七月初七举行“出花园”仪式，以示长大成人。类似现代的“成人节”。出花园时，外祖家给外孙办“出花园礼”。通常有红公鸡、红屐、酵果等。亲邻多备布料或肉、蛋为贺。喜家则置办祭礼“拜公婆母”（一般于凌晨四五点左右拜祭）。当日，孩子要吃甜丸、红鸡蛋和甜猪肝，意谓圆满长进。“咬鸡头”是出花园时在餐桌上必须的仪式，喻示着自己已成人。"
+        },
+        {
+            "title": "赛龙舟",
+            "author": "小明",
+            "time": "2020-06-04",
+            "tags": [
+                "习俗",
+                "比赛"
+            ],
+            "img": "./img/data/赛龙舟.jfif",
+            "content": "揭阳赛龙舟活动，历史悠久。揭阳素称水乡，溪涧交错环绕，榕江南北二河、练江、龙江水深流长，河面宽阔，波平浪静，是划龙舟的好地方。赛龙舟活动，历代不衰。 揭阳龙舟在潮汕各市县中，最长最大：舟长32米、宽1.5米，共设桨25对，舵一支。揭阳龙舟，造型美、气魄大，龙颈修长，龙首高昂，威武俊秀。从建造到龙舟下水、上水和参加竞赛，都要举行各种仪式，庄重考究，旧时有“龙船锣鼓戏”之俗语，意为赛龙舟、营（游）锣鼓、做大戏。每年端午节前，龙舟落水时要举行仪式，称“试桨”。清末曾任福建巡抚的丁日昌，晚年定居揭阳时，曾发起主持、邀请潮阳、普宁、揭阳等地龙舟队在榕江南河进行比赛，结果，揭阳棉树红色舟夺魁，丁日昌授予“钦差大臣丁赏”红绒锦旗。"
+        }
+    ];
+
+    function ajaxByPage() {
+                    var html = template("tpl", {articles: res});
+                    var articleTpl = document.getElementById('articleTpl');
+                    articleTpl.innerHTML = html;
+    }
+
+    $(function () {
+        ajaxByPage();
+        window.scrollTo(0,0);
+    });
+</script>
+</body>
+</html>

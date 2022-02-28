@@ -1,0 +1,289 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer"
+          content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <title>李泽宇（zy） -
+        前端开发爱好者。</title>
+    <meta
+            name="description"
+            content="这是一个介绍我的家乡-揭阳的论坛，欢迎光临">
+    <link href="css/bootstrap.min.css"
+          rel="stylesheet"
+          type="text/css"/>
+    <link href="css/font-awesome.min.css"
+          rel="stylesheet"
+          type="text/css">
+    <link href="css/rewrite-bootstrap.css"
+          rel="stylesheet">
+    <link href="style.css"
+          rel="stylesheet"
+          type="text/css"/>
+    <link
+            href="css/swiper.min.css"
+            rel="stylesheet"
+            type="text/css"/>
+    <!--[if lt IE 9]>
+    <script type="text/javascript"
+            src="js/html5.js"></script>
+    <script type="text/javascript"
+            src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<header class="vc-header">
+    <nav
+            class="navbar navbar-default navbar-fixed-top nav-top"
+            role="navigation"
+    >
+        <div class="container">
+            <div
+                    class="navbar-header nav-title">
+                <button type="button"
+                        class="navbar-toggle "
+                        data-toggle="collapse"
+                        data-target="#menu">
+                    <span
+                            class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"
+                   href="./index.html">
+                    我的家乡-揭阳之文化古迹篇
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse"
+                 id="menu">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">首页
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                                href="./page.html">文章</a>
+                    </li>
+                    <li>
+                        <a
+                                href="./map.html">地图</a>
+                    </li>
+                    <li>
+                        <a
+                                href="./comments.html">论坛</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/zizxzy">GitHub</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#"
+                           class="dropdown-toggle"
+                           data-toggle="dropdown"
+                           role="button"
+                           aria-expanded="false">更多
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu"
+                            role="menu">
+                            <li>
+                                <a href="https://juejin.im/user/5e965ea0e51d4546b90d24f6">掘金首页</a>
+                            </li>
+                            <li>
+                                <a href="https://segmentfault.com/u/zizxzy">思否首页</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container vc-container">
+    <div class="row">
+        <div
+                class="col-sm-12 col-md-9"
+                id="articleTpl">
+            <nav>
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="#"><i
+                                class="fa fa-angle-left"></i>
+                            Older</a>
+                    </li>
+                    <li class="next">
+                        <a href="#">Newer
+                            <i class="fa fa-angle-right"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div
+                class="visible-lg visible-md col-md-3">
+            <div class="panel panel-default">
+                <h4 class="vc-widget-title">
+                    公告</h4>
+                <div class="panel-body">
+                    <p style="text-indent:2rem;word-break:break-all;">
+                        这是一个介绍我的家乡-揭阳的论坛，欢迎光临
+                    </p>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <h4 class="vc-widget-title">
+                    友情链接</h4>
+                <div class="panel-body">
+                    <div class="row text-center">
+                        <a href="custom.html"
+                           class="col-md-6">风土人情</a>
+                        <a
+                                href="scence.html"
+                                class="col-md-6">家乡风貌</a>
+                        <a
+                                href="food.html"
+                                class="col-md-6">
+                            土特产品</a>
+                        <a
+                                href="Celebrities.html"
+                                class="col-md-6">历史名人</a>
+                        <a
+                                href="placesOfInterest.html"
+                                class="col-md-6">名胜古迹</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--引入外部的js文件-->
+<script type="text/javascript"
+        src="js/jquery.min.js"></script>
+<script type="text/javascript"
+        src="js/bootstrap.min.js"></script>
+<script type="text/javascript"
+        src="js/base.js"></script>
+<script src="http://cdn.bootcss.com/holder/2.6.0/holder.min.js"></script>
+<script
+        src="./js/template-web.js"></script>
+<script type="text/html"
+        id="tpl">
+    {{each articles}}
+    <div class="thumbnail">
+        <div class="vc-pagelist-img">
+            <a href=""><img
+                    src="{{$value.img}}"
+                    alt="demo image">
+            </a>
+        </div>
+        <div class="caption">
+            <h1 class="vc-page-title">
+                <a href="">
+                    {{$value.title}}</a>
+            </h1>
+            <p class="vc-author-info">
+                <time>
+                    {{$value.time}}
+                </time>
+                &bull;
+                <span>
+                    {{$value.author}}</span>
+            </p>
+            <!--在小屏幕里面隐藏-->
+            <p
+                    class="hidden-xs">
+                {{$value.content}}</p>
+            <p class="clearfix">
+                <span class="vc-tags">
+                    {{each
+                    $value.tags}}
+                                <a href="javascript:return false;">{{$value}}</a>
+                    {{/each}}
+                            </span>
+            </p>
+        </div>
+    </div>
+    {{/each}}
+</script>
+<script
+        type="text/javascript">
+    let res = [
+        {
+            "title": "黄歧山",
+            "author": "小红",
+            "time": "2020-03-08",
+            "tags": [
+                "风景",
+                "风貌",
+                "古迹"
+            ],
+            "img": "./img/data/黄歧山.jpg",
+            "content": "黄岐山是揭阳历史文化名山，山虽不高，但却因景色宜人早就成为古揭阳的胜景之一，后来文人墨客蜂拥而至，加上名人墓葬众多，使得这处胜景成为了文化胜地，登高而上，处处有景，处处有故事。据《乾隆揭阳县志》记载：“黄岐山，距城北十里，高约二百丈，周围五十五丈，脉自马鞍山来，土色黄，故名。” 黄岐山山上有许多文物古迹，还出土过新石器时代晚期和春秋时代的石锛、石镞、穿孔石斧、陶器碎片等文物。著名汉学家饶宗颐在《黄岐山记》中写道：“是山蟠幽而踞阻，群石嵯峨，向为盛德隐逸之所居······凭高俯瞰，榕江如带，涵烟霏而纳光景，外无波涛涨海之险，内有园木畅茂之胜，原隰沃衍，禾黍弥望，阴晴异态，各尽其奇”。黄岐山自明代以来就逐渐为人所熟悉，在《明一统志》中已经开始记载有“黄岐山”一名，并介绍其中的一些景致"
+        },
+        {
+            "title": "榕城老城区",
+            "author": "小王",
+            "time": "2020-06-08",
+            "tags": [
+                "老城",
+                "人文"
+            ],
+            "img": "./img/data/老城区1.jpeg",
+            "content": "老巷拐角处，看到岁月慢慢流淌，回忆着过去，懂景着未来。老城区，曾经的市中心，繁华而令人向往的地方，回忆起从小上学的必经之路，感觉小时候的\n天总是晴的，仿佛童话世界的缩影。一位慈祥的老者，岁月的铐陀仿佛写在他那松弛的皱纹。拍摄过程中一位老阿姨在楼上探出头\n来对我们说这都是古迹了，老巷子的小河已经不起岁月的折腾，堵塞了好多年，曾经清澈的小\n河如今是一片狼藉。"
+        },
+        {
+            "title":"揭阳学宫",
+            "author":"李泽宇",
+            "time":"2020-02-05",
+            "tags": [
+                "名胜古迹",
+                "建筑"
+            ],
+            "img": "./img/data/揭阳学宫.jpg",
+            "content": "揭阳学宫始建于南宋绍兴十年（1140年），浓缩了千年儒家文化精髓，现存建筑组群由21座单体建筑构成，是岭南地区规模最大、配套建筑最完善、保存最完整的同类历史建筑组群，也是省内唯一一处以“周恩来同志革命活动旧址”命名的文保单位。2013年5月，国务院核定公布为第七批全国重点文物保护单位。揭阳学宫原称“揭阳孔庙”，又称“文庙”、“红学”，因揭阳人常说为学宫，所以揭阳孔庙也渐渐被人们叫成“揭阳学宫”了。揭阳学宫位于揭阳市区韩祠路口东侧，\n为揭阳古代最高学府。 [1]  ，距今已有876年的历史。现存总面积20020平方米，是全国现存的最大规模府、县级孔庙，仅小于山东曲阜孔庙位居第二位，在同类古建筑中有着重要的地位与影响。在华南地区则可称冠。作为封建社会揭阳的唯一官学，学宫肩负着培育科举人才的重任。揭阳学宫自宋至清培育了众多的优秀人才，为揭阳赢得“文化之乡”美誉做出了不可磨灭的历史贡献。但由于历史上的兵燹天灾，文革期间的拆毁、改建，使揭阳学宫整体呈现破旧、局部濒危状态。"
+        },
+        {
+            "title":"进贤门",
+            "author":"李泽宇",
+            "time":"2020-06-08",
+            "tags": [
+                "名胜古迹",
+                "建筑"
+            ],
+            "img": "./img/data/进贤门.jpg",
+            "content": "进贤门在今揭阳榕城新兴路口。建于明天启元年（1621年），正面朝东。因通抵学宫，取增进进贤士之意，故名“进贤门”。 城楼建筑分三层，下层为瓮城门，建筑壮丽堂皇；中层为城楼：上层为琉璃亭阁，飞檐翘角，朱栏雕栋，雅致堂皇。明清时为击析施更场所，每当晨曦初现，报晓号声随风悠荡，驱散朝雾，迎来霞晖，声闻全城，自有一股韵味。昔日有“礁楼晓角”之称，列为揭阳八景之一。\n2015年12月10日，揭阳进贤门被广东省人民政府批准并公布为第八批广东省文物保护单位。揭阳县城原有东西南北门和进贤门，进贤门居五门之冠，是揭阳古八景之一，称“谯楼晓角”，雄伟壮观，是揭邑名城的历史文物。文化大革命中把“进贤门”盖去，改名“东凤亭”。文化大革命后恢复原貌。30年来，进贤门楼几经整修，现右边配上“三江之源”，左边竖立“碑记”，门前坐落一对石狮，为历史城楼锦上添花。进贤门位于原揭阳古城东、北二城门之间，始建于明代天启元年（1622年），距今已有380年的历史。"
+        },
+        {
+            "title":"城隍庙",
+            "time":"2020-01-06",
+            "author":"李泽宇",
+            "tags": [
+                "名胜古迹",
+                "建筑",
+                "宗教"
+            ],
+            "img": "./img/data/城隍庙.jfif",
+            "content": "揭阳城隍庙是广东省现存最大规模的同类古建筑。城隍是古代中国民族宗教文化中普遍崇祀的重要神祇之一，大多由有功于地方民众的名臣英雄充当，是中国民间和道教信奉守护城池之神。揭阳城隍庙位于广东揭阳东门城隍街，建于宋绍兴十年（1140年），明洪武二年（1369年）县丞许德重建。为省级重点保护文物单位。揭阳城隍庙建筑融合了明清建筑风格和揭阳本土传统工艺特色。主体建筑为木、石承载结构，力学结构科学严谨。大殿四壁仅仅起着防护作用。建筑结构防震性能很高，历经明代以来几十次地震，巍然不动，展现了古代中国劳动人民的聪明智慧和高超的建筑技艺。成了今人研究古代建筑的标本。\n2019年10月7日，入选第八批全国重点文物保护单位名单。据《揭阳县志·坛祠》载，城隍庙在城东解元坊，深二十六丈，广八丈。城隍庙庙宇以大殿为中心，\n揭阳城隍庙\n揭阳城隍庙\n南北一中轴线，左右两廊、两厢为对称建筑，三进院落。主要建筑有牌楼、大门、大殿、钟、鼓楼、后殿（夫人厅），总面积有2000多平方米。　城隍庙兴建迄今为止已有600多年，期间历经兵燹和自然灾害，屡遭摧毁破坏，但每次都能得以葺复重建，修建经费大多由善男信女、海内外侨胞、社会热心人士捐款。明正德八年（1513年）由义民宋廷春等捐资重建；嘉靖七年（1528年）由主簿季本增修；万历三十一年（1603年）邑人罗经泰倡建前亭及两旁钟鼓楼；万历四十五年（1617年）由邑人蔡俊、吴以汀、谢烈、宋汝翼、谢焘、宋仲勋、朱君陈等又重新维修；雍正九年，（1731年）合邑绅士重修；乾隆四十三年\n揭阳城隍庙内景\n揭阳城隍庙内景\n（1778年）知县刘业勤捐俸重修。1993年在市文物管理委员会、市文化局的领导下，组建城隍修缮办公室。邀请省、市有关专家和技术人员多次前来实地考察论证，并按照《文物法》“不改变原状”的原则，全面进行修缮，整座地坪提高60厘米，同时在原有的基础上，增建了牌楼，修复钟、鼓楼、拜亭、龙虎井等，历时四年多的时间，终于全面竣工。"
+        }
+    ];
+
+    function ajaxByPage() {
+                    var html = template("tpl", {articles: res});
+                    var articleTpl = document.getElementById('articleTpl');
+                    articleTpl.innerHTML = html;
+    }
+
+    $(function () {
+        ajaxByPage();
+        window.scrollTo(0,0);
+    });
+</script>
+</body>
+</html>

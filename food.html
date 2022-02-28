@@ -1,0 +1,276 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer"
+          content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <title>李泽宇（zy） -
+        前端开发爱好者。</title>
+    <meta
+            name="description"
+            content="这是一个介绍我的家乡-揭阳的论坛，欢迎光临">
+    <link href="css/bootstrap.min.css"
+          rel="stylesheet"
+          type="text/css"/>
+    <link href="css/font-awesome.min.css"
+          rel="stylesheet"
+          type="text/css">
+    <link href="css/rewrite-bootstrap.css"
+          rel="stylesheet">
+    <link href="style.css"
+          rel="stylesheet"
+          type="text/css"/>
+    <link
+            href="css/swiper.min.css"
+            rel="stylesheet"
+            type="text/css"/>
+    <!--[if lt IE 9]>
+    <script type="text/javascript"
+            src="js/html5.js"></script>
+    <script type="text/javascript"
+            src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<header class="vc-header">
+    <nav
+            class="navbar navbar-default navbar-fixed-top nav-top"
+            role="navigation"
+    >
+        <div class="container">
+            <div
+                    class="navbar-header nav-title">
+                <button type="button"
+                        class="navbar-toggle "
+                        data-toggle="collapse"
+                        data-target="#menu">
+                    <span
+                            class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"
+                   href="./index.html">
+                    我的家乡-揭阳之食物篇
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse"
+                 id="menu">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">首页
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                                href="./page.html">文章</a>
+                    </li>
+                    <li>
+                        <a
+                                href="./map.html">地图</a>
+                    </li>
+                    <li>
+                        <a
+                                href="./comments.html">论坛</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/zizxzy">GitHub</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#"
+                           class="dropdown-toggle"
+                           data-toggle="dropdown"
+                           role="button"
+                           aria-expanded="false">更多
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu"
+                            role="menu">
+                            <li>
+                                <a href="https://juejin.im/user/5e965ea0e51d4546b90d24f6">掘金首页</a>
+                            </li>
+                            <li>
+                                <a href="https://segmentfault.com/u/zizxzy">思否首页</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container vc-container">
+    <div class="row">
+        <div
+                class="col-sm-12 col-md-9"
+                id="articleTpl">
+            <nav>
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="#"><i
+                                class="fa fa-angle-left"></i>
+                            Older</a>
+                    </li>
+                    <li class="next">
+                        <a href="#">Newer
+                            <i class="fa fa-angle-right"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div
+                class="visible-lg visible-md col-md-3">
+            <div class="panel panel-default">
+                <h4 class="vc-widget-title">
+                    公告</h4>
+                <div class="panel-body">
+                    <p style="text-indent:2rem;word-break:break-all;">
+                        这是一个介绍我的家乡-揭阳的论坛，欢迎光临
+                    </p>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <h4 class="vc-widget-title">
+                    友情链接</h4>
+                <div class="panel-body">
+                    <div class="row text-center">
+                        <a href="custom.html"
+                           class="col-md-6">风土人情</a>
+                        <a
+                                href="scence.html"
+                                class="col-md-6">家乡风貌</a>
+                        <a
+                                href="food.html"
+                                class="col-md-6">
+                            土特产品</a>
+                        <a
+                                href="Celebrities.html"
+                                class="col-md-6">历史名人</a>
+                        <a
+                                href="placesOfInterest.html"
+                                class="col-md-6">名胜古迹</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--引入外部的js文件-->
+<script type="text/javascript"
+        src="js/jquery.min.js"></script>
+<script type="text/javascript"
+        src="js/bootstrap.min.js"></script>
+<script type="text/javascript"
+        src="js/base.js"></script>
+<script src="http://cdn.bootcss.com/holder/2.6.0/holder.min.js"></script>
+<script
+        src="./js/template-web.js"></script>
+<script type="text/html"
+        id="tpl">
+    {{each articles}}
+    <div class="thumbnail">
+        <div class="vc-pagelist-img">
+            <a href=""><img
+                    src="{{$value.img}}"
+                    alt="demo image">
+            </a>
+        </div>
+        <div class="caption">
+            <h1 class="vc-page-title">
+                <a href="">
+                    {{$value.title}}</a>
+            </h1>
+            <p class="vc-author-info">
+                <time>
+                    {{$value.time}}
+                </time>
+                &bull;
+                <span>
+                    {{$value.author}}</span>
+            </p>
+            <!--在小屏幕里面隐藏-->
+            <p
+                    class="hidden-xs">
+                {{$value.content}}</p>
+            <p class="clearfix">
+                <span class="vc-tags">
+                    {{each
+                    $value.tags}}
+                                <a href="javascript:return false;">{{$value}}</a>
+                    {{/each}}
+                            </span>
+            </p>
+        </div>
+    </div>
+    {{/each}}
+</script>
+<script
+        type="text/javascript">
+    let  res  = [
+        {
+            "title": "潮汕功夫茶",
+            "time": "2020-05-01",
+            "author": "李泽宇",
+            "tags": [
+                "茶文化",
+                "待客之道"
+            ],
+            "img": "./img/data/kongfutea.jpg",
+            "content": "潮州工夫茶艺，别称潮汕工夫茶，是广东省潮汕地区一带特有的传统饮茶习俗，潮汕的工夫茶最负盛名，蜚声四海，被尊称为“中国茶道”。\n潮州工夫茶是中国茶艺中最具代表性的一种，是融精神、礼仪、沏泡技艺巡茶艺术、评品质量为一体的完整的茶道形式，既是一种茶艺，也是一种民俗，是“潮人习尚风雅，举措高超”的象征。潮州工夫茶被列入《国家级非物质文化遗产名录》 [1]  。\n潮州茶道是中国古老的传统茶文化中最有代表性的茶道。潮州工夫茶历史悠久。中国茶文化盛行于唐朝，潮州工夫茶则盛行于宋朝，贵族茶就是源于潮州工夫茶，至今已有千年历史 [2]  。在潮州当地更是把茶做为了待客的最佳礼仪并加以完善，这不仅是因为茶在许多方面有着养生的作用更因为自古以来茶就有“待君子，清心身”的意境。\n喝工夫茶是广东潮州人一项日常生活中最平常不过的事了，饭后，或者客人来访，好友相见，都是以一壶茶来陪衬。\n日本的煎茶道、中国台湾地区的泡茶道都来源于潮州的工夫茶"
+        },
+        {
+            "title": "隆江猪脚饭",
+            "time": "2020-05-03",
+            "author": "李华",
+            "tags": [
+                "美食",
+                "卤味"
+            ],
+            "img": "./img/data/猪脚饭.jpeg",
+            "content": "隆江猪脚饭是广东省潮汕地区著名的特色传统小吃，得名于原产地——惠来县隆江镇。其鲜美的味道和弹嫩糯香的口感加以本镇特色米饭组合成了隆江猪脚饭，肥而不腻，入口香爽，深受广东人民的喜爱。\n其实，广越味隆江猪脚饭深受人们的欢迎并不只是因为其独特的卤香和弹嫩糯香的口感，更在于其秘制的健康养生中药材卤料配方（卤料中含有：香叶，八角，桂皮，陈皮等有益于健康养生的上等中药材），猪脚放在这些中药材的卤水中熬煮不但味道香美更有利于人们的健康养生。\n猪脚本身就具有壮腰、补膝和美白肌肤之功效，可用于治疗肾虚所致的腰膝酸软以及皮肤素沉着、肤色偏黑等症状，对于经常性的四肢疲乏周身无力脚部抽筋、肢体麻木等症状具有一定的治疗效果，特别有助于年轻人的强骨壮身，所以自古猪脚就非常受人们的欢迎，而隆江人民对猪脚吃法的独特理解与创意，使隆江猪脚流传万方，深受各地人民的欢迎。北有烤鸭，南有隆江猪脚，如今隆江猪脚饭已成为广东的象征与符号"
+        },
+        {
+            "title": "绿豆饼",
+            "time": "2020-04-08",
+            "author": "李华",
+            "tags": [
+                "甜点",
+                "美食"
+            ],
+            "img":"./img/data/绿豆.jpg",
+            "content": "惠来绿豆饼是广东省揭阳市惠来县隆江镇的特产。隆江绿豆饼，又名神仙眷侣饼，至今已有上百年历史。成品呈浅黄色，无壳、无粒、无杂质，松软可口，饼皮由多重薄皮叠成，色、香、味俱佳。\n隆江绿豆饼，又名神仙眷侣饼，至今已有上百年历史。其用料精细，制作讲究，以其酥皮清晰多层、入口即融、馅心冰甜而闻名。绿豆饼选用绿豆粉、白砂糖、花生油、杏仁、芝麻等主要材料，采取人工的方式精制而成，口味香浓、松化，以其酥皮清晰多层、入口即融、馅心冰甜而闻名。成品呈浅黄色，无壳、无粒、无杂质，松软可口，饼皮由多重薄皮叠成，色、香、味俱佳。食时起酥、绵软、润滑，甜而不腻，凉爽适口。饼内含大量蛋白质、脂肪等营养成份，深受人们喜爱，尤其适合老年人及儿童食用。产品不但畅销于国内各大中城市，在港、澳及东南亚地区也普遍受到欢迎。绿豆饼的制作历史悠久，有部分饼家更是从18世纪初期开始制作绿豆饼，他们凭着数代人传授下来的秘方，经反复推敲改良研制而成。现做现卖，新鲜出炉，是最传统的美食之一， 也是潮汕人最喜欢的点心之一。惠来隆江绿豆饼选用上等绿豆、精面粉和优质蔗糖、食用油为主要原料，按照传统加工方法，经过配料、调酥、和面、包酥、擀压、包馅、及烙烤等工序精制而成。成品呈浅黄色，无壳、无粒、无杂质，松软可口，饼皮由多重薄皮叠成，色、香、味俱佳。食时起酥、绵软、润滑，甜而不腻，凉爽适口。饼内豆馅清甜滋润，含大量蛋白质、脂肪等营养成份，深受人们喜爱，食后齿颊留香，舌面有冰凉之感，故有冰饼之称。尤其适合老年人及儿童食用。又是送礼佳品，既好看又好吃，纯绿色食物，不添加任何添加剂。\n绿豆饼是把磨好的绿豆用盐调味，加弄碎的猪肉﹑绿豆芽﹑蕨菜﹑切成丝的泡菜煎出来的，可以用鸡肉或火鸡肉代替猪肉。以腌一下的蕨菜﹑绿豆芽﹑包心菜切成丝代替。可以搭配在酱油里加肉汤和醋做的酱。\n绿豆有利尿作用，是凉身性质的食品，可以防署降温。并且含有丰富的钙和维生素A，对成长期儿童和老人好"
+        },
+        {
+            "title": "菜粿",
+            "time": "2020-05-18",
+            "author": "李泽宇",
+            "tags": [
+                "美食",
+                "面食",
+                "传统美食"
+            ],
+            "img":"./img/data/guo.jpg",
+            "content": "菜粿是汕尾地区特色小吃菜包粿又叫菜粿，是广东省汕尾地区最有名的特色风味小食，极具地方特色，远近闻名汕尾市梅陇一带的时节粿品。在梅陇镇，农历正月二十是一年中第一个盛典，汕尾市梅陇圩内居民叫“开市日”。街道上一片喜气祥和：五彩牌楼高耸，彩旗蔽日；狮班、曲班、戏班、唢呐班、八音班轮番表演……家家户户也都忙着大摆宴席，忙着赶做“菜包粿”。汕尾市这座滨海小城，一年四季，无论春夏秋冬，每近中午时分，各类食店摊档，遍布街巷。汕尾市到处都有做菜包粿，像陆丰马街的菜包粿每一出炉就会被抢一空，竹街的油煎菜包粿车水马龙。\n由于在冬至节，基本上家家户户都会做菜包粿，菜包粿又称冬至粿。不过冬至节的“菜包粿”人们习惯称之为“冬节蛤”，虽然用料一样，但“冬节蛤”的外形近似北方的饺子，与一般的菜包粿外形显然不同。\n在过去那个年代，只有在过年时，或者是有重要的客人到来时，人们才能吃到菜包粿，改革开放以后，海陆丰地区的许多特色小吃都成了商品小吃，但能够登上“大雅之堂”的，恐怕非菜包粿莫属。菜包粿可以做得很精、很细，也可以做得普普通通的，普通的到处都可以买到，一块钱可以买到三个，这些菜包粿一般都是半人工半机器做成的，垛皮和内馅都够粗糙，用料也相对便宜。\n菜包粿不但是汕尾市酒楼颇受欢迎的早茶茶点，而且还挤身于汕尾市区大酒店的食桌上。可见菜包粿在汕尾市地区的美食地位是占有一席之地的。\n在汕尾，每近中午时分，各种风味小食，纷纷上市。街巷处处香气扑鼻．初到汕尾的人闻所未闻、见所未见，诸如：猪肠果、重糕果、莱头果、薯粉果、油炸果、鼎溜果、升煽果、鸭蓝果、铜盘卷、发果、菜包果、碗仔果，还有各式各样的准条汤、糯米丸、尖米丸……，真是琳琅满目．诱人垂涎．这些菜果或以米粉为皮，花生米、虾米、瘦肉丝、鳅鱼丝以及香料蔬菜为馅，蒸熟后放着，吃时再用油煎，加调味料；或直接由米浆和虾仁、肉丁、蔬菜等拌在一起，蒸一层，加一层，重叠再蒸，叫做重（叠）糕果，吃时切成一块块，佐以生抽配料；油炸果、菜头丸一类，则以萝卜丝、葱头或蒜头、虾仁、红丝，用米浆拌和油炸。这些菜果吃起来脆香酥滑，非常可口。菜源物美价廉，风味独特，吃菜果取代中餐，已逐步成为人们的一种习惯，不少人讲究工作与休息，不想多花时间做饭，便到街市上买点莱果回家吃。因此，菜果生意，也越做越兴隆。\n海丰菜粿，远近闻名，是一种味道极佳的地方小吃。采用精制黏米粉，制作时用温水搅拌，用手戳揉，成为很有弹性的垛皮，再以芹菜，蒜子，瘦肉，鱿鱼丝，新鲜蔬菜为陷，精制而成，蒸熟便可吃，入口嫩滑喷香，十分可口。"
+        }
+    ];
+    function ajaxByPage() {
+                    var html = template("tpl", {articles: res});
+                    var articleTpl = document.getElementById('articleTpl');
+                    articleTpl.innerHTML = html;
+    }
+
+    $(function () {
+        ajaxByPage();
+        window.scrollTo(0,0);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,605 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer"
+          content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <title>李泽宇 -
+        前端开发爱好者。</title>
+    <link href="css/bootstrap.min.css"
+          rel="stylesheet"
+          type="text/css"/>
+    <link href="css/font-awesome.min.css"
+          rel="stylesheet"
+          type="text/css">
+    <link href="css/rewrite-bootstrap.css"
+          rel="stylesheet">
+    <link href="style.css"
+          rel="stylesheet"
+          type="text/css"/>
+    <!--[if lt IE 9]>
+    <script type="text/javascript"
+            src="js/html5.js"></script>
+    <script type="text/javascript"
+            src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer"
+          content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <title>李泽宇（zy） -
+        前端开发爱好者。</title>
+    <meta
+            name="description"
+            content="这是一个介绍我的家乡-揭阳的论坛，欢迎光临">
+    <link href="css/bootstrap.min.css"
+          rel="stylesheet"
+          type="text/css"/>
+    <link href="css/font-awesome.min.css"
+          rel="stylesheet"
+          type="text/css">
+    <link href="css/rewrite-bootstrap.css"
+          rel="stylesheet">
+    <link href="style.css"
+          rel="stylesheet"
+          type="text/css"/>
+    <!--[if lt IE 9]>
+    <script type="text/javascript"
+            src="js/html5.js"></script>
+    <script type="text/javascript"
+            src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<header class="vc-header">
+    <nav
+            class="navbar navbar-default navbar-fixed-top nav-top"
+            role="navigation"
+    >
+        <div class="container">
+            <div
+                    class="navbar-header nav-title">
+                <button type="button"
+                        class="navbar-toggle "
+                        data-toggle="collapse"
+                        data-target="#menu">
+                    <span
+                            class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"
+                   href="./index.html">
+                    我的家乡-揭阳
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse"
+                 id="menu">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">首页
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                                href="./page.html">文章</a>
+                    </li>
+                    <li>
+                        <a
+                                href="./map.html">地图</a>
+                    </li>
+                    <li class="active">
+                        <a
+                                href="./comments.html">论坛</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/zizxzy">GitHub</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#"
+                           class="dropdown-toggle"
+                           data-toggle="dropdown"
+                           role="button"
+                           aria-expanded="false">更多
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu"
+                            role="menu">
+                            <li>
+                                <a href="https://juejin.im/user/5e965ea0e51d4546b90d24f6">掘金首页</a>
+                            </li>
+                            <li>
+                                <a href="https://segmentfault.com/u/zizxzy">思否首页</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- 模态框（Modal） -->
+<div class="modal fade"
+     id="myModal"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-hidden="true">
+                    &times;
+                </button>
+                <h4
+                        class="modal-title"
+                        id="myModalLabel">
+                    注意！！添加帖子失败</h4>
+            </div>
+            <div class="modal-body">
+                请输入完整的姓名、题目、日期和评论
+            </div>
+            <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-default"
+                        data-dismiss="modal">
+                    关闭
+                </button>
+                <!--<button type="button" class="btn btn-primary">提交更改</button>-->
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<div class="container vc-container">
+    <div class="row">
+        <div
+                class="col-sm-12 col-md-9 ">
+            <section
+            >
+                <div id="commentTpl"></div>
+                <div class="container">
+                    <div class="row">
+                        <div
+                                class="col-sm-12 col-md-12"
+                                id="pageTplContainer">
+
+                        </div>
+                    </div>
+                </div>
+                <div id="respond"
+                     class="comment-respond">
+                    <h3 id="reply-title"
+                        class="comment-reply-title">
+                        发表帖子
+                    </h3>
+                    <form
+                            method="post"
+                            id="commentform"
+                            class="comment-form">
+                        <p class="comment-notes">
+                            <span id="email-notes">姓名不会被公开。</span>
+                            必填项已用<span
+                                class="required">*</span>标注
+                        </p>
+                        <p class="comment-form-author">
+                            <label for="author">姓名
+                                <span class="required">*</span>
+                            </label>
+                            <input id="author"
+                                   name="author"
+                                   type="text"
+                                   size="30"
+                                   aria-required="true"
+                                   required="required"
+                                   autocomplete="off">
+                        </p>
+                        <p class="comment-form-email">
+                            <label for="title">题目
+                                <span class="required">*</span>
+                            </label>
+                            <input id="title"
+                                   name="title"
+                                   type="text"
+                                   size="30"
+                                   aria-describedby="email-notes"
+                                   aria-required="true"
+                                   required="required"
+                                   autocomplete="off">
+                        </p>
+                        <p
+                                class="comment-form-date">
+                            <label for="date">发表时间</label>
+                            <input id="date"
+                                   name="date"
+                                   type="date"
+                                   aria-required="true"
+                                   required="required"
+                                   autocomplete="off"
+                            >
+                        </p>
+                        <p class="comment-form-comment">
+                            <label for="comment">帖子内容</label>
+                            <textarea
+                                    id="comment"
+                                    name="comment"
+                                    rows="5"
+                                    aria-describedby="form-allowed-tags"
+                                    aria-required="true"
+                                    required="required"
+                                    autocomplete="off"></textarea>
+                        </p>
+                        <p class="form-submit">
+                            <input name="submit"
+                                   type="button"
+                                   id="submit"
+                                   class="submit"
+                                   value="发表帖子">
+                        </p>
+                    </form>
+                </div>
+            </section>
+            <!-- CODE END -->
+        </div>
+        <div class="visible-lg visible-md col-md-3">
+            <div class="panel panel-default">
+                <h4
+                        class="vc-widget-title">
+                    公告</h4>
+                <div class="panel-body">
+                    <p style="text-indent:2rem;word-break:break-all;">
+                        这是一个介绍我的家乡-揭阳的论坛，欢迎你的到来。
+                    </p>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <h4 class="vc-widget-title">
+                    栏目链接</h4>
+                <div class="panel-body">
+                    <div class="row text-center">
+                        <a href="custom.html"
+                           class="col-md-6">风土人情</a>
+                        <a
+                                href="scence.html"
+                                class="col-md-6">家乡风貌</a>
+                        <a
+                                href="food.html"
+                                class="col-md-6">土特产品</a>
+                        <a
+                                href="Celebrities.html"
+                                class="col-md-6">历史名人</a>
+                        <a
+                                href="placesOfInterest.html"
+                                class="col-md-6">名胜古迹</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript"
+        src="js/jquery.min.js"></script>
+<script type="text/javascript"
+        src="js/bootstrap.min.js"></script>
+<script type="text/javascript"
+        src="js/base.js"></script>
+<script type="text/javascript"
+        src="js/localStorageUtil.js"></script>
+<script type="text/javascript"
+        src="js/deepCopy.js"></script>
+<script src="http://cdn.bootcss.com/holder/2.6.0/holder.min.js"></script>
+<script
+        src="./js/template-web.js"></script>
+<script type="text/html"
+        id="tpl">
+
+    {{each comments}}
+    <ul class="nav nav-list">
+        <li class="divider"></li>
+    </ul>
+    <div
+            data-index
+                    ={{$index}}>
+        <div class="row">
+            <h3
+                    class="vc-comments-title col-md-11">
+                {{$value.title}}
+            </h3>
+            <a
+                    class="delete-link col-md-1"
+                    href="javascript:void(0);"
+                    onclick="deleteComment(this)"
+                    aria-label="回复给WordPress先生"
+                    data-index
+                            ={{$index+page*3}}>删除</a>
+        </div>
+        <ol class="commentlist">
+            <li class="comment even thread-even depth-1 parent">
+                <div
+                        class="comment-body">
+                    <div class="comment-author vcard">
+                        <img alt=""
+                             src="https://wx2.sbimg.cn/2020/05/09/_20200509083114.jpg"
+                             srcset="https://wx2.sbimg.cn/2020/05/09/_20200509083114.jpg 2x"
+                             class="avatar avatar-50 photo avatar-default"
+                             height="50"
+                             width="50">
+                        <cite class="fn"><a
+                                href="https://github.com/zizxzy"
+                                rel="external nofollow"
+                                class="url">{{$value.author}}</a></cite>
+
+                        <time>
+                            {{$value.time}}
+                        </time>
+                    </div>
+
+                    <p>
+                        {{$value.content}}
+                    </p>
+
+                    <footer class="comment-footer">
+                        <a class="comment-reply-link"
+                           href="javascript:void(0);"
+                           aria-label="回复给WordPress先生"
+                           onclick="respond(this)"
+                           data-index={{$index+page*3}}>回复</a>
+                    </footer>
+                </div>
+                <ol class="children">
+                    {{each
+                    $value.children}}
+                    <li class="comment odd alt depth-2 parent">
+                        <div
+                                class="comment-body">
+                            <div class="comment-author vcard">
+                                <img alt=""
+                                     src="http://ww1.sinaimg.cn/large/006GbN2Ely1g939oqbwalj31jk2bhkjl.jpg"
+                                     srcset="http://ww1.sinaimg.cn/large/006GbN2Ely1g939oqbwalj31jk2bhkjl.jpg 2x"
+                                     class="avatar avatar-50 photo"
+                                     height="50"
+                                     width="50">
+                                <cite class="fn"><a
+                                        href="https://github.com/zizxzy"
+                                        rel="external nofollow"
+                                        class="url">{{$value.author}}</a></cite>
+
+                                <time>
+                                    {{$value.time}}
+                                </time>
+                            </div>
+
+                            <p>
+                                {{$value.content}}</p>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ol>
+            </li>
+        </ol>
+    </div>
+    {{/each}}
+</script>
+<script type="text/html"
+        id="pageTpl">
+    <ul
+            class="pagination">
+        <% for(var i = 0; i
+        < pages; i++){ %>
+        <li><a
+                class="page"
+                onclick="ajaxByPage(<%= i %>)"><%=
+            i+1 %></a>
+        </li>
+        <% } %>
+    </ul>
+</script>
+<script type="text/javascript">
+    function pagination(page, total, comments) {
+        if (total === 1) {
+            return comments;
+        }
+        if (page < total - 1) {
+            return comments.splice(page * 3, 3);
+        }
+        if (page === total - 1) {
+            return comments.splice(page * 3, comments.length);
+        }
+    }
+
+    function ajaxByPage(page) {
+        let comment = readComments("test");
+        let OtherComments = [];
+        OtherComments = deepCopy(comment, OtherComments);
+        console.log(OtherComments);
+        OtherComments = pagination(page, Math.ceil(OtherComments.length / 3), OtherComments);
+        console.log(OtherComments);
+        let html = template('tpl',
+            {
+                comments: OtherComments,
+                page: page
+            });
+        var commentsTpl = document.getElementById("commentTpl");
+        commentsTpl.innerHTML = html;
+        let pageHtml = template('pageTpl', {pages: Math.ceil(comment.length / 3)});
+        var pageTpl = document.getElementById("pageTplContainer");
+        pageTpl.innerHTML = pageHtml;
+        window.scrollTo(0, 0);
+    }
+
+    function getFormValue(formId, textareaId) {
+        let input = $(`${formId} p > input`);
+        let comment = $(textareaId);
+        input.splice(3, 1);
+        console.log(input);
+        let inputArr = [];
+        input.each(function (index, value) {
+            /*inputArr[index] = value.val(); */
+            inputArr.push(value.value);
+        });
+        inputArr.push(comment.val());
+        return inputArr;
+    }
+
+    function respond(respond) {
+        let index = respond.getAttribute('data-index');
+        const htmlTxt = `
+           <div id="respondInput"
+                     class="comment-respond">
+                    <h3 id="respond-title"
+                        class="comment-reply-title">
+                        回复帖子
+                    </h3>
+                    <form
+                            method="post"
+                            id="commentForm"
+                            class="comment-form">
+                        <p class="comment-notes">
+                            <span id="username-note">姓名不会被公开。</span>
+                            必填项已用<span
+                                class="required">*</span>标注
+                        </p>
+                        <p class="comment-form-author">
+                            <label for="author">姓名
+                                <span class="required">*</span>
+                            </label>
+                            <input
+                                   name="author"
+                                   type="text"
+                                   size="30"
+                                   aria-required="true"
+                                   required="required">
+                        </p>
+                        <p class="comment-form-email">
+                            <label for="title">题目
+                                <span class="required">*</span>
+                            </label>
+                            <input
+                                   name="title"
+                                   type="text"
+                                   size="30"
+                                   aria-describedby="email-notes"
+                                   aria-required="true"
+                                   required="required">
+                        </p>
+                        <p
+                                class="comment-form-date">
+                            <label for="date">回复时间</label>
+                            <input
+                                   name="date"
+                                   type="date"
+                                   aria-required="true"
+                                   required="required"
+                            >
+                        </p>
+                        <p class="comment-form-comment">
+                            <label for="comment">回复</label>
+                            <textarea id="respondTxt"
+                                    name="comment"
+                                    rows="5"
+                                    aria-describedby="form-allowed-tags"
+                                    aria-required="true"
+                                    required="required"></textarea>
+                        </p>
+                        <p class="form-submit">
+                            <input id="respondBtn"
+                                   name="submit"
+                                   type="button"
+                                   class="submit"
+                                   value="回复帖子">
+                        </p>
+                    </form>
+                </div>
+        `;
+        var parentDiv = respond.parentNode.parentNode;
+        parentDiv.innerHTML = parentDiv.innerHTML + htmlTxt;
+        document.getElementById("respondBtn").onclick = function () {
+            let formValue = getFormValue('#commentForm', '#respondTxt');
+            console.log(formValue);
+            let res = formValue.every((value) => {
+                return value !== "";
+            });
+            if (res === false) {
+                $('#myModal').modal();
+                return;
+            }
+            let comment = {
+                author: formValue[0],
+                title: formValue[1],
+                time: formValue[2],
+                content: formValue[3],
+            };
+            let comments = readComments("test");
+            comments[index].children.push(comment);
+            saveComments("test", comments);
+            ajaxByPage(Math.floor(index / 3));
+        }
+    }
+
+    function deleteComment(comment) {
+        let index = comment.getAttribute("data-index");
+        let comments = readComments("test");
+        comments.splice(index, 1);
+        let length = comments.length;
+        saveComments("test", comments);
+        if (index ===
+            (length).toString() && Number(index) % 3 === 0) {
+            ajaxByPage(Math.floor(comments.length / 3) - 1);
+        } else {
+            ajaxByPage(Math.floor(index / 3));
+        }
+        /*     let html = template('tpl', {comments: comments});
+             var commentsTpl = document.getElementById("commentTpl");
+             commentsTpl.innerHTML = html;*/
+    }
+
+    document.getElementById("submit").onclick = function () {
+        let formValue = getFormValue('#commentform', '#comment');
+        console.log(formValue);
+        let res = formValue.every((value) => {
+            return value !== "";
+        });
+        if (res === false) {
+            $('#myModal').modal();
+            return;
+        }
+        let comment = {
+            author: formValue[0],
+            title: formValue[1],
+            time: formValue[2],
+            content: formValue[3],
+            children: []
+        };
+        let comments = readComments("test");
+        comments.unshift(comment);
+        saveComments("test", comments);
+        ajaxByPage(0);
+        location.reload();
+    };
+
+    $(function () {
+        ajaxByPage(0);
+        let comment = readComments("test");
+        let pageHtml =
+            template('pageTpl', {pages: Math.ceil(comment.length / 3)});
+        var pageTpl = document.getElementById("pageTplContainer");
+        pageTpl.innerHTML = pageHtml;
+    })
+
+</script>
+</body>
+</html>

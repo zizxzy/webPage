@@ -1,0 +1,301 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer"
+          content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <title>李泽宇（zy） -
+        前端开发爱好者。</title>
+    <meta
+            name="description"
+            content="这是一个介绍我的家乡-揭阳的论坛，欢迎光临">
+    <link href="css/bootstrap.min.css"
+          rel="stylesheet"
+          type="text/css"/>
+    <link href="css/font-awesome.min.css"
+          rel="stylesheet"
+          type="text/css">
+    <link href="css/rewrite-bootstrap.css"
+          rel="stylesheet">
+    <link href="style.css"
+          rel="stylesheet"
+          type="text/css"/>
+    <!--[if lt IE 9]>
+    <script type="text/javascript"
+            src="js/html5.js"></script>
+    <script type="text/javascript"
+            src="js/respond.min.js"></script>
+    <![endif]-->
+    <title>JieYang-MAP</title>
+    <link rel="stylesheet"
+          href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css"/>
+    <style>
+        html,
+        body,
+        #container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        #map-styles .input-item {
+            height: 2rem;
+        }
+
+        #map-styles .input-item span {
+            display: inline-block;
+            width: 4rem;
+        }
+
+        #map-styles .input-item .input-text {
+            color: #0288d1;
+            margin-left: 1rem;
+            margin-right: 0rem;
+            width: 6rem;
+        }
+
+        #selectType {
+            width: 200px;
+            height: 200px;
+            padding-top: 40px;
+            padding-left: 40px;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+<header class="vc-header">
+    <nav
+            class="navbar navbar-default navbar-fixed-top nav-top"
+            role="navigation"
+    >
+        <div class="container">
+            <div
+                    class="navbar-header nav-title">
+                <button type="button"
+                        class="navbar-toggle "
+                        data-toggle="collapse"
+                        data-target="#menu">
+                    <span
+                            class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"
+                   href="./index.html">
+                    我的家乡-揭阳
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse"
+                 id="menu">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">首页
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                                href="./page.html">文章</a>
+                    </li>
+                    <li class="active">
+                        <a
+                                href="./map.html">地图</a>
+                    </li>
+                    <li>
+                        <a
+                                href="./comments.html">论坛</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/zizxzy">GitHub</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#"
+                           class="dropdown-toggle"
+                           data-toggle="dropdown"
+                           role="button"
+                           aria-expanded="false">更多
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu"
+                            role="menu">
+                            <li>
+                                <a href="https://juejin.im/user/5e965ea0e51d4546b90d24f6">掘金首页</a>
+                            </li>
+                            <li>
+                                <a href="https://segmentfault.com/u/zizxzy">思否首页</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="container"></div>
+<div id="selectType">
+    <select id="select"
+            onchange="setMapType()">
+        <option
+                value="normal">
+            默认图
+        </option>
+        <option
+                value="satellite">
+            卫星图
+        </option>
+        <option
+                value="road">
+            路网图
+        </option>
+
+    </select>
+</div>
+<div class="input-card"
+     style="width:16rem">
+    <h4>自定义颜色样式
+        (默认图层和路网图才有颜色自定义)</h4>
+    <div id="map-styles">
+        <div class="input-item">
+            <input type='radio'
+                   name='mapStyle'
+                   value='normal'>
+            <span>标准</span>
+            <span class="input-text">normal</span>
+        </div>
+        <div class="input-item">
+            <input type='radio'
+                   name='mapStyle'
+                   value='dark'><span>幻影黑</span><span
+                class="input-text">dark</span>
+        </div>
+        <div class="input-item">
+            <input type='radio'
+                   name='mapStyle'
+                   value='light'><span>月光银</span><span
+                class="input-text">light</span>
+        </div>
+        <div class="input-item">
+            <input type='radio'
+                   name='mapStyle'
+                   value='whitesmoke'
+                   checked><span>远山黛</span><span
+                class="input-text">whitesmoke</span>
+        </div>
+        <div class="input-item">
+            <input type='radio'
+                   name='mapStyle'
+                   value='fresh'><span>草色青</span><span
+                class="input-text">fresh</span>
+        </div>
+        <div class="input-item">
+            <input type='radio'
+                   name='mapStyle'
+                   value='grey'><span>雅士灰</span><span
+                class="input-text">grey</span>
+        </div>
+        <div class="input-item">
+            <input type='radio'
+                   name='mapStyle'
+                   value='graffiti'><span>涂鸦</span><span
+                class="input-text">graffiti</span>
+        </div>
+        <div class="input-item">
+            <input type='radio'
+                   name='mapStyle'
+                   value='macaron'><span>马卡龙</span><span
+                class="input-text">macaron</span>
+        </div>
+        <div class="input-item">
+            <input type='radio'
+                   name='mapStyle'
+                   value='blue'><span>靛青蓝</span><span
+                class="input-text">blue</span>
+        </div>
+        <div class="input-item">
+            <input type='radio'
+                   name='mapStyle'
+                   value='darkblue'><span>极夜蓝</span><span
+                class="input-text">darkblue</span>
+        </div>
+        <div class="input-item">
+            <input type='radio'
+                   name='mapStyle'
+                   value='wine'><span>酱籽</span><span
+                class="input-text">wine</span>
+        </div>
+    </div>
+</div>
+<script src="https://cache.amap.com/lbs/static/es5.min.js"></script>
+<script src="https://webapi.amap.com/maps?v=2.0&key=20cd4649289b2700b2525770c6ddc5e6"></script>
+<script>
+    //初始化地图
+    var map = new AMap.Map('container', {
+        resizeEnable: true, //是否监控地图容器尺寸变化
+        mapStyle:
+            "amap://styles/whitesmoke",
+        center:
+            [116.37,
+                23.55],
+        zoom: 16
+    });
+    var marker = new AMap.Marker({
+        position: new
+        AMap.LngLat(116.37,
+            23.55),
+        // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
+        title: '揭阳'
+    });
+
+    // 将创建的点标记添加到已有的地图实例：
+    map.add(marker);
+    var road = new
+    AMap.TileLayer.RoadNet();
+    var satellite = new
+    AMap.TileLayer.Satellite();
+    //绑定radio点击事件
+    var radios = document.querySelectorAll("#map-styles input");
+    radios.forEach(function (ratio) {
+        ratio.onclick = setMapStyle;
+    });
+
+    function setMapStyle() {
+        var styleName = "amap://styles/" + this.value;
+        map.setMapStyle(styleName);
+    }
+
+    function setMapType() {
+        let Type = document.getElementById('select');
+        let index = Type.selectedIndex;
+        let val = Type[index].value;
+        if (val === 'road') {
+            map.remove(satellite);
+            map.add(road)
+        }
+        if (val ===
+            'satellite') {
+            map.remove(road);
+            map.add(satellite)
+        }
+        if (val === 'normal') {
+            map.remove(road);
+            map.remove(satellite);
+        }
+    }
+</script>
+<script type="text/javascript"
+        src="js/jquery.min.js"></script>
+<script type="text/javascript"
+        src="js/bootstrap.min.js"></script>
+<script type="text/javascript"
+        src="js/base.js"></script>
+<script src="http://cdn.bootcss.com/holder/2.6.0/holder.min.js"></script>
+</body>
+
+</html>
